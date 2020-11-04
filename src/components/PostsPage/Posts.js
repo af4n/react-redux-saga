@@ -6,6 +6,7 @@ const Posts = ({syncPosts}) => {
   if (!syncPosts.length) {
     return <p>Постов пока нет</p>
   }
+
   return (
     syncPosts.map(post => <Post post={post} key={post.id} />)
   )

@@ -1,7 +1,7 @@
 import React from "react"
 import {connect} from "react-redux";
-import {createPost, showAlert} from "../redux/actions";
-import {Alert} from "./Alert";
+import {createPost, showAlert} from "../../redux/actions";
+import {Alert} from "../Alert";
 
 class PostForm extends React.Component {
   constructor(props) {
@@ -48,7 +48,7 @@ class PostForm extends React.Component {
                  name="title"
                  onChange={this.changeInputHandler}/>
         </div>
-        <button className="btn btn-success mb-4">Создать</button>
+        <button className="btn btn-outline-dark mb-4">Создать</button>
       </form>
     )
   }
