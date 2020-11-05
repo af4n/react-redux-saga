@@ -1,5 +1,23 @@
 @import "~bootstrap/scss/bootstrap";
 
-.navbar-nav {
+.navbar-nav, .card {
   flex-direction: row;
+}
+
+.input-group-text {
+  color: #1b1e21;
+  background: #c6c8ca;
+}
+
+.card-img {
+  width: 100px;
+  height: 100px;
+}
+
+.card-body-comment {
+  border-left: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.card-text {
+  word-break: break-word;
 }

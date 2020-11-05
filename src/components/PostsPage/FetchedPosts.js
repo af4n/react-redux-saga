@@ -10,13 +10,11 @@ export default () => {
   const loading = useSelector(state => state.app.loading)
 
   if (loading) {
-    return (
-      <Loader />
-    )
+    return <Loader />
   }
 
   if (!posts.length) {
-    return <button className="btn btn-primary"
+    return <button className="btn btn-outline-dark"
                    onClick={() => dispatch(fetchPosts())}>Загрузить</button>
   }
   return (

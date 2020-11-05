@@ -1,6 +1,6 @@
 import {
   CREATE_COMMENT,
-  CREATE_POST,
+  CREATE_POST, FETCH_COMMENT,
   FETCH_POSTS,
   HIDE_ALERT,
   HIDE_LOADER,
@@ -69,5 +69,20 @@ export function createComment(comment) {
   return {
     type: CREATE_COMMENT,
     payload: comment
+  }
+}
+
+export function fetchComments() {
+  return async dispatch => {
+    try {
+      dispatch(showLoader())
+      const response = await fetch(`https://jsonplaceholder.typicode.com/comments?_limit=5`)
+      const json = await response.json()
+      dispatch({type: FETCH_COMMENT, payload: json})
+      dispatch(hideLoader())
+    } catch (e) {
+      dispatch(showAlert("Что-то пошло не так"))
+      dispatch(hideLoader())
+    }
   }
 }

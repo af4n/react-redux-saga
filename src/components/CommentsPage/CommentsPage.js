@@ -1,6 +1,7 @@
 import React from "react"
 import CommentsForm from "./CommentsForm";
 import Comments from "./Comments";
+import FetchedComments from "./FetchedComments";
 
 export default () => (
   <div className="container pt-4">
@@ -10,13 +11,13 @@ export default () => (
       </div>
     </div>
     <div className="row">
-      <div className="col">
+      <div className="col-6">
         <h2>Синхронные комментарии</h2>
         <Comments />
       </div>
-      <div className="col">
+      <div className="col-6">
         <h2>Асинхронные комментарии</h2>
-        FetchedComments
+        <FetchedComments />
       </div>
     </div>
   </div>

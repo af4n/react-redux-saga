@@ -8,25 +8,25 @@ class CommentsForm extends React.Component {
     super(props);
 
     this.state = {
-      comment: ""
+      body: ""
     }
   }
 
   submitHandler = event => {
     event.preventDefault()
 
-    const {comment} = this.state
+    const {body} = this.state
 
-    if (!comment.trim()) {
+    if (!body.trim()) {
       return this.props.showAlert("Комментарий не может быть пустым")
     }
 
     const newComment = {
-      comment, id: Date.now().toString()
+      body, id: Date.now().toString()
     }
 
     this.props.createComment(newComment)
-    this.setState({comment: ""})
+    this.setState({body: ""})
   }
 
   changeInputHandler = event => {
@@ -46,11 +46,11 @@ class CommentsForm extends React.Component {
           <input type="text"
                  className="form-control"
                  id="title"
-                 value={this.state.comment}
-                 name="comment"
+                 value={this.state.body}
+                 name="body"
                  onChange={this.changeInputHandler}/>
           <div className="input-group-append">
-            <button className="btn btn-outline-dark">Создать</button>
+            <button className="btn btn-dark">Создать</button>
           </div>
         </div>
       </form>
